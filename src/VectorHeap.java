@@ -1,3 +1,4 @@
+import java.util.Collections;
 import java.util.Vector;
 
 /**
@@ -21,9 +22,10 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E> {
      */
     public VectorHeap(Vector<E> v){
         datos = new Vector<E>(v.size());
-        for (E e : v) {
-            add(e);
+        for(E i:v){
+            this.add(i);
         }
+
     }
 
     /**
@@ -117,12 +119,12 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E> {
      * @post regresa el valor minimo en la PriorityQueue
      */
     public E getFirst() {
-        return null;
+        return Collections.min(datos);
     }
 
     /**
      * @pre no esta vacío
-     * @post regresa y nelimi
+     * @post regresa y elimina el valor
      */
     public E remove() {
         E minVal = getFirst();
@@ -146,9 +148,7 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E> {
     /**
      * @post regresa verdadero si no hay elementos en la cola.
      */
-    public boolean isEmpty() {
-        return datos.isEmpty();
-    }
+    public boolean isEmpty() { return datos.isEmpty(); }
 
     /**
      * @post regresa el numero de elementos en la cola.

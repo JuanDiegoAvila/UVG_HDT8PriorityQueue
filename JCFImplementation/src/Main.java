@@ -22,7 +22,7 @@ public class Main {
         }catch (Exception ignored){ }
 
         System.out.println("\n Los pacientes ingresados al sistema son -> ");
-        VectorHeap<Paciente> heap = new VectorHeap<>();
+        PriorityQueue<Paciente> heap = new PriorityQueue<>();
         for(Paciente i: pacientes){
             heap.add(i);
             System.out.println(i.toString());
